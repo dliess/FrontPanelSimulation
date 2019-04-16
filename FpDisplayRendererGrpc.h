@@ -19,24 +19,24 @@ public:
                         const gfx::Resolution& resolution);
     ~DisplayRendererGrpc();
     virtual void drawPixel( const gfx::Coord&    pixPos,
-                            const ColorRGB& colorRGB);
+                            const ColorRGB& colorRGB) override;
     virtual void streamToSubWindow(const gfx::Rectangle& subWindow,
-                                   const ColorRGB*  pPixelStream);
+                                   const ColorRGB*  pPixelStream) override;
     virtual void streamFromFramebuf(const gfx::Rectangle& subWindow,
                                     const Vector2d<uint32_t>&      resolution,
-                                    const ColorRGB*  pFrameBuf);
+                                    const ColorRGB*  pFrameBuf) override;
     virtual void drawLine(  const gfx::Coord&    p1,
                             const gfx::Coord&    p2,
-                            const ColorRGB& colorRGB);
+                            const ColorRGB& colorRGB) override;
     virtual void drawHLine( const gfx::Coord&    p1,
                             gfx::Pixel           width,
-                            const ColorRGB& colorRGB);
+                            const ColorRGB& colorRGB) override;
     virtual void drawVLine( const gfx::Coord&    p1,
                             gfx::Pixel           height,
-                            const ColorRGB& colorRGB);
+                            const ColorRGB& colorRGB) override;
     virtual void drawRectangle( const gfx::Rectangle& rect,
                                 const ColorRGB&  colorRGB,
-                                bool                           filled);
+                                bool             filled) override;
     virtual uint32_t getDiscretePixelOverFrameStreamPercentage();
 
     virtual gfx::Resolution getResolution() const override;
