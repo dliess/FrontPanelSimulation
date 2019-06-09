@@ -103,12 +103,16 @@ void Simulation<DeviceTopology>::update(ButtonLayer& layer)
             switch(it->state())
             {
                 case ButtonState::BUTTON_PRESSED:
+                {
                     pValueHandler->pressState.set(Button::Pressed);
-                break;
-                case ButtonState::BUTTON_RELEASED:
+                    break;
+                }
+                case ButtonState::BUTTON_RELEASED: [[fallthrough]]
                 default:
+                {
                     pValueHandler->pressState.set(Button::Released);
-                break;
+                    break;
+                }
             }
         }
     }
@@ -133,12 +137,18 @@ void Simulation<DeviceTopology>::update(Button3dLayer& layer)
             switch(it->state())
             {
                 case ButtonState::BUTTON_PRESSED:
+                {
                     pValueHandler->pressState.set(Button3d::Pressed);
-                break;
-                case ButtonState::BUTTON_RELEASED:
+                    pValueHandler->velocity = 127;
+                    break;
+                }
+                case ButtonState::BUTTON_RELEASED: [[fallthrough]]
                 default:
+                {
                     pValueHandler->pressState.set(Button3d::Released);
-                break;
+                    pValueHandler->velocity = 127;
+                    break;
+                }
             }
         }
     }
@@ -162,12 +172,18 @@ void Simulation<DeviceTopology>::update(Button5dLayer& layer)
             switch(it->state())
             {
                 case ButtonState::BUTTON_PRESSED:
+                {
                     pValueHandler->pressState.set(Button5d::Pressed);
-                break;
+                    pValueHandler->velocity = 127;
+                    break;
+                }
                 case ButtonState::BUTTON_RELEASED:
                 default:
+                {
                     pValueHandler->pressState.set(Button5d::Released);
-                break;
+                    pValueHandler->velocity = 127;
+                    break;
+                }
             }
         }
     }
