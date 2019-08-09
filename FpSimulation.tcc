@@ -86,6 +86,42 @@ void Simulation<DeviceTopology>::registerCB(typename TouchSurface::CallbackIf& c
 }
 
 template<class DeviceTopology>
+void Simulation<DeviceTopology>::unRegisterCB(typename Button::CallbackIf& cb, const Widget& w)
+{
+    m_buttonCbLayer.unRegisterCB(cb, w);
+}
+
+template<class DeviceTopology>
+void Simulation<DeviceTopology>::unRegisterCB(typename Button3d::CallbackIf& cb, const Widget& w)
+{
+    m_button3dCbLayer.unRegisterCB(cb, w);
+}
+
+template<class DeviceTopology>
+void Simulation<DeviceTopology>::unRegisterCB(typename Button5d::CallbackIf& cb, const Widget& w)
+{
+    m_button5dCbLayer.unRegisterCB(cb, w);
+}
+
+template<class DeviceTopology>
+void Simulation<DeviceTopology>::unRegisterCB(typename Encoder::CallbackIf& cb, const Widget& w)
+{
+    m_encoderCbLayer.unRegisterCB(cb, w);
+}
+
+template<class DeviceTopology>
+void Simulation<DeviceTopology>::unRegisterCB(typename Potentiometer::CallbackIf& cb, const Widget& w)
+{
+    m_potentiometerCbLayer.unRegisterCB(cb, w);
+}
+
+template<class DeviceTopology>
+void Simulation<DeviceTopology>::unRegisterCB(typename TouchSurface::CallbackIf& cb, const Widget& w)
+{
+    m_touchSurfaceCbLayer.unRegisterCB(cb, w);
+}
+
+template<class DeviceTopology>
 void Simulation<DeviceTopology>::update(ButtonLayer& layer)
 {
     std::vector<GetButtonStateAnswer> changedBtnStates;
