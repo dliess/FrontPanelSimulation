@@ -3,6 +3,7 @@
 
 using namespace fp;
 
+inline
 std::tuple<std::string, Vector2d<uint8_t>> extractNameAndCoordinates(const std::string& label)
 {
     auto firstOpenBracket = label.find('[');
