@@ -296,6 +296,17 @@ void Simulation<DeviceTopology>::update(TouchSurfaceLayer& layer)
 }
 
 template<class DeviceTopology>
+fp::Button::PressState Simulation<DeviceTopology>::getButtonState(const fp::Widget& w) const
+{
+    const auto pValHolder = m_buttonCbLayer.get(w);
+    if(!pValHolder)
+    {
+        return fp::Button::PressState::Released;
+    }
+    return pValHolder->pressState.value();
+}
+
+template<class DeviceTopology>
 void Simulation<DeviceTopology>::setLed(const Widget& w, const Led::ColorRGB& colorRGB)
 {
     forWidget<typename DeviceTopology::Led>(w, [this, &colorRGB](const Widget& w){

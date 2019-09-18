@@ -59,6 +59,8 @@ public:
     virtual void unRegisterCB(typename Potentiometer::CallbackIf& cb, const Widget& w) override;
     virtual void unRegisterCB(typename TouchSurface::CallbackIf& cb, const Widget& w) override;
 
+    fp::Button::PressState getButtonState(const fp::Widget& w) const;
+
     void setLed(const Widget& w, const Led::ColorRGB& colorRGB) override;
     void movePositioner(const Widget& w, const Positioner::Position& pos);
 
