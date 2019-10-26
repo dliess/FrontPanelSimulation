@@ -11,6 +11,7 @@
 #include "FpPositioner.h"
 
 #include "FpInputCallbackLayer.h"
+#include "FpLedSceneHandler.h"
 
 // todo
 #include "FpTopologyContainer.h"
@@ -37,7 +38,8 @@ class Simulation : public Button::IProvider,
                    public Encoder::IProvider,
                    public Potentiometer::IProvider,
                    public TouchSurface::IProvider,
-                   public Led::ISetter
+                   public Led::ISetter,
+                   public fp::LedSceneHandler<Push2Device>
 {
 public:
     Simulation(const std::string& serverAddress);
