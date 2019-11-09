@@ -39,7 +39,7 @@ class Simulation : public Button::IProvider,
                    public Potentiometer::IProvider,
                    public TouchSurface::IProvider,
                    public Led::ISetter,
-                   public fp::LedSceneHandler<Simulation<DeviceTopology>, typename DeviceTopology::Led, 3>
+                   public fp::LedSceneHandler<Simulation<DeviceTopology>, typename DeviceTopology::Led, 8>
 {
 public:
     Simulation(const std::string& serverAddress);
