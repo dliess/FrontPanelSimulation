@@ -143,7 +143,7 @@ void Simulation<DeviceTopology>::update(ButtonLayer& layer)
                     pValueHandler->pressState.set(Button::Pressed);
                     break;
                 }
-                case ButtonState::BUTTON_RELEASED: [[fallthrough]]
+                case ButtonState::BUTTON_RELEASED: [[fallthrough]];
                 default:
                 {
                     pValueHandler->pressState.set(Button::Released);
@@ -178,7 +178,7 @@ void Simulation<DeviceTopology>::update(Button3dLayer& layer)
                     pValueHandler->velocity = 127;
                     break;
                 }
-                case ButtonState::BUTTON_RELEASED: [[fallthrough]]
+                case ButtonState::BUTTON_RELEASED: [[fallthrough]];
                 default:
                 {
                     pValueHandler->pressState.set(Button3d::Released);
